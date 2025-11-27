@@ -1,0 +1,160 @@
+/* Mobile first - base styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+}
+
+body {
+    font-family: 'cursive', sans-serif;
+    background-color: #fafafa;
+    color: #444;
+    padding: 0.5rem;
+    display: flex;  
+    flex-direction: column;              
+    justify-content: center;      
+    align-items: center;
+    gap: 1rem;          
+    min-height: 100vh;                          
+}
+
+body > img {
+    max-width: 50px;    
+    height: auto;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+p {
+    font-size: 12px;
+    width: 300px;
+}
+
+form {
+    background-color: #eee;
+    width: 90%;
+    padding: 2rem;
+    margin: 1rem auto;
+    border-radius: 15px;
+}
+
+form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+    outline: none;
+    font-size: 1rem;
+    background: white;
+    color: #444;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1ex 2ex;
+}
+
+textarea {
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+    border: 1px solid #009BCe;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #8B7965;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+span {
+    font-weight: 700;
+    /* color: #25D366; WhatsApp green color */
+}
+
+.whatsapp-number a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;        /* Optional: inherit text color */
+}
+
+.whatsapp-number img {
+  max-width: 30px;      
+  height: auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+/* Mobiles (Large) / Tables (Portrait) styles */
+@media screen and (min-width: 576px) {
+    body {
+        font-size: 0.75rem;
+        background-color: lightgreen;
+    }
+
+    form {
+        width: 90%;
+        /* padding: 1rem; */
+    }
+}
+
+/* Tablets (Landscape) / Laptops (Small) styles */
+@media screen and (min-width: 992px) {
+    body {
+        font-size: 0.75rem;
+        background-color: lightgreen;
+    }
+
+    form {
+        width: 90%;
+        /* padding: 1rem; */
+    }
+}
+
+/* Desktops styles */
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 0.75rem;
+        background-color: lightgreen;
+    }
+
+    form {
+        width: 90%;
+        /* padding: 1rem; */
+    }
+}
+
+/* Orientation sample */
+@media screen and (min-width: 768px) and (orientation: landscape) {
+
+}
