@@ -45,7 +45,7 @@ span {
 }
 
 footer {
-    width: 90%;
+    width: 85%;
     background-color: #8B7965;
     padding: 0.5rem;
     border-radius: 10px;
@@ -101,19 +101,34 @@ footer .copyright {
     margin: 5px;
 }
 
-.cupcakes img {
-    max-width: 50px;
+.cup-1 {
+    max-width: 75px;
     /* Name, duration, timing function, iteration count */
-    animation: spin 3s linear infinite;
+    animation: cup-1 4s linear infinite;
 }
 
-@keyframes spin {
+.cup-2 {
+    max-width: 75px;
+    /* Name, duration, timing function, iteration count */
+    animation: cup-2 2s linear infinite;
+}
+
+@keyframes cup-1 {
     from {
         transform: rotate(0deg);
     }
-    to {
-        transform: rotate(360deg);
+      to {
+        transform: rotate(360deg); /* Counterclockwise rotation */
     }
+}
+
+@keyframes cup-2 {
+    50% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 /* MEDIA QUERIES */
@@ -159,10 +174,14 @@ footer .copyright {
 }
 
 /* Tablets (Landscape) / Laptops (Small) styles */
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 888px) {
     body {
         font-size: 0.75rem;
-        /* background-color: lightblue; */
+    }
+
+    body > p {
+        width: 500px;
+        margin: 20px;
     }
 
     h1 {
@@ -176,12 +195,27 @@ footer .copyright {
     }
 
     p {
-        width: 60%;
-        padding-left: 40px;
+        width: 80%;
+        padding-left: 90px;
     }
 
     span {
         font-weight: normal;
+    }
+
+    .whatsapp-number {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .cupcakes {
+        gap: 200px
+    }
+
+    footer {
+        width: 50%;
+        text-align: center;
     }
 }
 
@@ -189,12 +223,15 @@ footer .copyright {
 @media screen and (min-width: 1200px) {
     body {
         font-size: 0.75rem;
-        /* background-color: lightpink; */
+    }
+
+    body > p {
+        width: 500px;
+        margin: 20px;
     }
 
     h1 {
         font-size: 3em;
-        line-height: .25em;
         margin-top: 10px;
     }
 
@@ -203,18 +240,31 @@ footer .copyright {
     }
 
     p {
-        width: 60%;
-        padding-left: 80px;
+        width: 100%;
+        padding-left: 5px;
     }
 
     span {
         font-weight: normal;
+    }
+
+    .whatsapp-number {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .cupcakes {
+        gap: 200px
+    }
+
+
+    footer {
+        width: 50%;
     }
 }
 
 /* Orientation sample */
 @media screen and (min-width: 768px) and (orientation: landscape) {
 
-
 }
-
