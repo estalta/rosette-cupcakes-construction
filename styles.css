@@ -45,7 +45,7 @@ span {
 }
 
 footer {
-    width: 75%;
+    width: 85%;
     background-color: #8B7965;
     padding: 0.5rem;
     border-radius: 10px;
@@ -214,5 +214,6 @@ footer .copyright {
 
 /* Orientation sample */
 @media screen and (min-width: 768px) and (orientation: landscape) {
+
 
 }
