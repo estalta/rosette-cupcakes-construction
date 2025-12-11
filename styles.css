@@ -8,36 +8,39 @@
 
 /* modern web design often utilizes system font stacks or web fonts like "Roboto" or "Open Sans",
    which can offer a more contemporary aesthetic and are also optimized for mobile.  */
+html,
 body {
     font-family: 'Verdana', sans-serif;
     color: black;
-    padding: 30px;
+    padding: 10px;
     display: flex;  
     flex-direction: column;              
     align-items: center;
     gap: 1rem;          
-    min-height: 100vh;                          
+    /* min-height: 100vh; Removed because it creates a ver. scroll bar */
 }
 
 body > img {
-    max-width: 50px;    
+    /* Adjust this value as needed to desired size */
+    width: 3.75rem; 
     height: auto;
+    /* Optional: Prevents the image from becoming huge on very large screens */
+    max-width: 100px;
 }
 
 body > p {
     font-family: roboto;
-    font-size: 14px;
-    width: 300px;
+    font-size: 0.8rem;
+    width: 18rem;
 }
 
 h1 {
     font-family: cursive;
-    font-size: 20px;
-    line-height: .25em;
+    font-size: 1.25rem;
 }
 
 h3 {
-    font-size: 14px;
+    font-size: 0.8rem;
 }
 
 span {
@@ -45,8 +48,8 @@ span {
 }
 
 footer {
-    width: 85%;
-    background-color: #8B7965;
+    width: 21rem;
+    background-color: #8d7760;
     padding: 0.5rem;
     border-radius: 10px;
     text-align: center;
@@ -54,7 +57,7 @@ footer {
 
 footer .copyright {
     font-style: italic;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 500;
     color: #fff;
 }
@@ -65,50 +68,53 @@ footer .copyright {
     gap: 5px;
 }
 
-.whatsapp-number a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: inherit;        /* Optional: inherit text color */
-}
-
-.whatsapp-number img {
-  max-width: 30px;      
-  height: auto;
-}
-
-.whatsapp-number span {
-    font-size: 12px;
-}
-
+.whatsapp-number a,
 .instagram-link a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: inherit;        /* Optional: inherit text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 3px;
+    text-decoration: none;
+    color: inherit;
+    /* outline: 2px solid green; */
+    /* ADD THIS: */
+    /* Prevents items from shrinking below their content size */
+    flex-shrink: 0;
+    /* Forces the anchor to adopt the maximum required width of its contents */ 
+    width: max-content;         
 }
 
+.whatsapp-number img,
 .instagram-link img {
-  max-width: 30px;      
-  height: auto;
+    /* Adjust this value as needed to desired size */
+    width: 1.9rem; 
+    height: auto;
+    /* Optional: Prevents the image from becoming huge on very large screens */
+    max-width: 30px;
+    /* outline: 2px solid red; */
+}
+
+.whatsapp-number span,
+.instagram-link span {
+    font-size: 0.75rem;
 }
 
 .cupcakes {
     display: flex;
+    justify-content: center;
     gap: 80px;
     margin: 5px;
 }
 
 .cup-1 {
-    max-width: 75px;
+    max-width: 20%;
     /* Name, duration, timing function, iteration count */
     animation: cup-1 4s linear infinite;
 }
 
 .cup-2 {
-    max-width: 75px;
+    max-width: 20%;
     /* Name, duration, timing function, iteration count */
     animation: cup-2 2s linear infinite;
 }
@@ -124,144 +130,127 @@ footer .copyright {
 
 @keyframes cup-2 {
     50% {
-    transform: rotate(90deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 /* MEDIA QUERIES */
 
 /* Mobiles (Large) / Tables (Portrait) styles */
-@media screen and (min-width: 576px) {
-    body {
-        font-size: 0.75rem;
-        /* background-color: lightgreen; */
+@media screen and (min-width: 686px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
     }
 
     body > img {
-        max-width: 60px;    
+        width: 4.5rem; 
         height: auto;
+        max-width: 100px;
+    }
+
+    body > p {
+        font-size: 0.9rem;
+        width: 80%;
+    }
+
+    .whatsapp-number {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
     }
 
     .whatsapp-number img,
     .instagram-link img {
-        max-width: 40px;      
+        width: 2.3rem; 
         height: auto;
+        max-width: 50px;
     }
 
-    .whatsapp-number a,
-    .instagram-link a {
-        font-size: 14px;
+    .cupcakes {
+        gap: 195px
     }
 
-    h1 {
-        font-size: 2.5em;
-        line-height: .25em;
-        margin-top: 10px;
-    }
-
-    h3 {
-        font-size: 1.8em;
-    }
-
-    p {
+    footer {
         width: 90%;
-        padding-left: 30px;
+        background-color: #8d7760;
+        padding: 0.5rem;
+        border-radius: 10px;
         text-align: center;
+    } 
+
+    footer .copyright {
+        font-size: 0.85rem;
     }
 }
 
 /* Tablets (Landscape) / Laptops (Small) styles */
-@media screen and (min-width: 888px) {
-    body {
-        font-size: 0.75rem;
-    }
-
-    body > p {
-        width: 500px;
-        margin: 20px;
-    }
-
+@media screen and (min-width: 900px) {
     h1 {
-        font-size: 2.5em;
-        line-height: .25em;
-        margin-top: 10px;
+        font-size: 2.6rem;
     }
 
     h3 {
-        font-size: 1.8em;
+        font-size: 1.7rem;
     }
 
-    p {
-        width: 80%;
-        padding-left: 90px;
+    body > img {
+        width: 4.7rem; 
+        height: auto;
+        max-width: 100px;
     }
 
-    span {
-        font-weight: normal;
+    body > p {
+        font-size: 1rem;
+        width: 90%;
     }
 
     .whatsapp-number {
         display: flex;
-        flex-direction: row;
-        gap: 50px;
+        /* flex-direction: column; */
+        gap: 40px;
+        margin: 15px;
+    }
+
+    .instagram-link {
+        margin: 15px;
+    }
+
+    .whatsapp-number img,
+    .instagram-link img {
+        width: 2.5rem; 
+        height: auto;
+        max-width: 50px;
     }
 
     .cupcakes {
-        gap: 200px
+        gap: 230px
     }
 
     footer {
-        width: 50%;
+        width: 95%;
+        background-color: #8d7760;
+        padding: 0.5rem;
+        margin: 15px;
+        border-radius: 10px;
         text-align: center;
+    } 
+
+    footer .copyright {
+        font-size: 1rem;
     }
 }
 
+
 /* Desktops styles */
 @media screen and (min-width: 1200px) {
-    body {
-        font-size: 0.75rem;
-    }
-
-    body > p {
-        width: 500px;
-        margin: 20px;
-    }
-
-    h1 {
-        font-size: 3em;
-        margin-top: 10px;
-    }
-
-    h3 {
-        font-size: 2.1em;
-    }
-
-    p {
-        width: 100%;
-        padding-left: 5px;
-    }
-
-    span {
-        font-weight: normal;
-    }
-
-    .whatsapp-number {
-        display: flex;
-        flex-direction: row;
-        gap: 50px;
-    }
-
-    .cupcakes {
-        gap: 200px
-    }
-
-
-    footer {
-        width: 50%;
-    }
+    
 }
 
 /* Orientation sample */
